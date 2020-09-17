@@ -1,0 +1,7 @@
+{
+  "numberquestions": [
+    { "id": 1, "question": "How many friends does Dino have?", "answer": "3" },
+    { "id": 2, "question": "How many drinks does Dino buy?", "answer": "7" },
+    { "id": 3, "question": "How many cars does Dino own?", "answer": "4" }
+  ]
+}
