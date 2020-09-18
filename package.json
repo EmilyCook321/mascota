@@ -10,10 +10,11 @@
     "test": "npm run lint && cd client && npm test",
     "lint": "eslint . --ext .js",
     "prettify": "prettier --write .",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" \"npm run storybook\"",
     "client": "cd client && npm start",
     "server": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "storybook": "cd client && npm run storybook"
   },
   "repository": {
     "type": "git",
