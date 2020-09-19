@@ -1,9 +1,13 @@
 import React from "react";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
     <div>
-      <h1>Mascota</h1>
+      <GlobalStyles />
+      <div>
+        <h1>Mascota</h1>
+      </div>
     </div>
   );
 }
