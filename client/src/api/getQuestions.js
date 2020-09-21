@@ -1,5 +1,5 @@
 export const getQuestions = async () => {
-  const response = await fetch("http://localhost:3000/numberquestions");
+  const response = await fetch("/api/questions");
   if (!response.ok) {
     throw response;
   }

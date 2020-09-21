@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function QuestionBubble({ text }) {
+export default function QuestionBubble({ question }) {
   return (
     <>
-      <textarea>{text}</textarea>
+      <textarea>{question}</textarea>
     </>
   );
 }
 
-QuestionBubble.propTypes = { text: PropTypes.string, onClick: PropTypes.func };
+QuestionBubble.propTypes = { question: PropTypes.string };
