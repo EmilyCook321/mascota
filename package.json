@@ -55,6 +55,9 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
+    "express": "^4.17.1",
+    "styled-components": "^5.2.0"
   }
 }
