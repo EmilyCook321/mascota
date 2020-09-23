@@ -11,6 +11,8 @@ export default function NumberSelector(props) {
   );
 }
 
-NumberSelector.propTypes = { increment: PropTypes.func };
-NumberSelector.propTypes = { decrement: PropTypes.func };
-NumberSelector.propTypes = { number: PropTypes.number };
+NumberSelector.propTypes = {
+  increment: PropTypes.func,
+  decrement: PropTypes.func,
+  number: PropTypes.number,
+};
