@@ -1,7 +1,8 @@
 {
-  "numberquestions": [
+  "questions": [
     { "id": 1, "question": "Dino will Felix, Daisy und Alice zu seine Geburtstagsparty einladen. Wie viele Einladungen sollte er schreiben?", "answer": "3" },
     { "id": 2, "question": "How many drinks will Dino buy?", "answer": "7" },
-    { "id": 3, "question": "How many cars does Dino own?", "answer": "4" }
+    { "id": 3, "question": "How many cars does Dino own?", "answer": "4" },
+    { "id": 4, "question": "How many cats does Dino own?", "answer": "2", "options": ["2", "4", "6", "1"] }
   ]
 }

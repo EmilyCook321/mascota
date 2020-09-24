@@ -1,48 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import GlobalStyles from "./GlobalStyles";
 import { getQuestions } from "./api/getQuestions";
+import NumberSelector from "./components/NumberSelector";
+import OptionSelector from "./components/OptionSelector";
 import QuestionBubble from "./components/QuestionBubble";
 
-// function App () {
-//   const [ questions, getQuestions ] = useState(null);
-// }
+function App() {
+  const [questions, setQuestions] = useState(null);
+  const [selectedAnswer, setSelectedAnswer] = useState(0);
 
-// useEffect(() => {
-//   async function getQuestions() {
+  useEffect(() => {
+    async function fetchQuestions() {
+      const allQuestions = await getQuestions();
+      setQuestions(allQuestions);
+    }
+    fetchQuestions();
+  }, []);
 
-//   }
-// })
-
-class App extends getQuestions {
-  constructor() {
-    super();
-    this.state = {
-      questionBank: [],
-    };
-  }
-  // Function to get question from ./api/getQuestions
-  getQuestions = () => {
-    getQuestions().then((question) => {
-      this.setState({
-        questionBank: question,
-      });
-    });
-  };
-  // componentDidMount function to get question
-  componentDidMount() {
-    this.getQuestions();
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Mascota</h1>
-        {this.state.questionBank.length > 0 &&
-          this.state.questionBank.map(({ question, id }) => (
+  return (
+    <div>
+      <h1>Mascota</h1>
+      {questions &&
+        questions.map(({ question, id, answer, options }) => (
+          <>
             <QuestionBubble question={question} key={id} />
-          ))}
-      </div>
-    );
-  }
+
+            {options ? (
+              <OptionSelector
+                values={options}
+                onSelect={(answer) => setSelectedAnswer(answer)}
+              />
+            ) : (
+              <NumberSelector
+                increment={() => setSelectedAnswer(selectedAnswer + 1)}
+                decrement={() => setSelectedAnswer(selectedAnswer - 1)}
+                number={selectedAnswer}
+              />
+            )}
+            {answer === selectedAnswer && <h2>Richtig!</h2>}
+          </>
+        ))}
+    </div>
+  );
 }
 export default App;
