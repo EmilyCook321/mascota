@@ -4,6 +4,9 @@ import { getQuestions } from "./api/getQuestions";
 import NumberSelector from "./components/NumberSelector";
 import OptionSelector from "./components/OptionSelector";
 import QuestionBubble from "./components/QuestionBubble";
+// import styled from "@emotion/styled";
+
+import NumberQuestionPage from "./pages/NumberQuestionPage";
 
 function App() {
   const [questions, setQuestions] = useState(null);
@@ -19,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <NumberQuestionPage pageNumber="1"></NumberQuestionPage>
       <h1>Mascota</h1>
       {questions &&
         questions.map(({ question, id, answer, options }) => (
