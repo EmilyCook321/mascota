@@ -24,4 +24,5 @@ export default OptionSelector;
 
 const Button = styled.button`
   background-color: #9e38d5;
+  border-radius: 5px;
 `;

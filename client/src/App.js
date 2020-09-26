@@ -24,6 +24,7 @@ function App() {
     <div>
       <NumberQuestionPage pageNumber="1"></NumberQuestionPage>
       <h1>Mascota</h1>
+
       {questions &&
         questions.map(({ question, id, answer, options }) => (
           <>

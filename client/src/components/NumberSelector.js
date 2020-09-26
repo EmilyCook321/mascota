@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "@emotion/styled";
 
 export default function NumberSelector(props) {
   return (
     <div>
-      <button onClick={props.increment}>+</button>
+      <NumberButton onClick={props.increment}>+</NumberButton>
       <span>{props.number}</span>
-      <button onClick={props.decrement}>-</button>
+      <NumberButton onClick={props.decrement}>-</NumberButton>
     </div>
   );
 }
@@ -16,3 +17,11 @@ NumberSelector.propTypes = {
   decrement: PropTypes.func,
   number: PropTypes.number,
 };
+
+// styling
+const NumberButton = styled.button`
+  background-color: #ffffff;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+`;
