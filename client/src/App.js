@@ -2,6 +2,7 @@ import React from "react";
 import GlobalStyles from "./GlobalStyles";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NumberQuestionPage from "./pages/NumberQuestionPage";
+import styled from "@emotion/styled";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Link to="/questions/1">Questions 1</Link>
               <Link to="/questions/2">Questions 2</Link>
               <Link to="/questions/3">Questions 3</Link>
+              <Link to="/questions/3">Questions 4</Link>
             </div>
           </Route>
         </Switch>
@@ -26,3 +28,12 @@ function App() {
   );
 }
 export default App;
+
+//Styling
+
+// const div = styled.div`
+//   text-align: center;
+//   font-size: 15px;
+//   font-family: Roboto;
+
+// `;
