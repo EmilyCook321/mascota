@@ -2,54 +2,62 @@ import React, { useState, useEffect } from "react";
 import NumberSelector from "../components/NumberSelector";
 import { getQuestion } from "../api/getQuestion";
 import QuestionBubble from "../components/QuestionBubble";
-import PropTypes from "prop-types";
 import styled from "@emotion/styled";
+import { useParams } from "react-router-dom";
+import OptionSelector from "../components/OptionSelector";
+
 // import SubmitButton from "../components/SubmitButton";
 
-function NumberQuestionPage(props) {
+function NumberQuestionPage() {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(0);
+  const { id } = useParams();
+  const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {
     async function fetchQuestion() {
-      const NumberQuestion = await getQuestion(props.pageNumber);
-      setQuestion(NumberQuestion);
-      console.log(NumberQuestion);
+      const question = await getQuestion(id);
+      setQuestion(question);
+      console.log(question);
     }
     fetchQuestion();
-    //below was an empty react hook  }[]);
-  });
-
-  // function checkAnswers() {
-  //   alert("success");
-  // }
+  }, [id]);
 
   return (
     <Numbermain>
       <div>
-        <h1>Question 1</h1>
+        <h1>Question {id}</h1>
 
         {question && (
-          <>
-            <QuestionBubble question={question.question} key={question.id} />
-            <NumberSelector
-              increment={() => setSelectedAnswer(selectedAnswer + 1)}
-              decrement={() => setSelectedAnswer(selectedAnswer - 1)}
-              number={selectedAnswer}
-            />
-
-            {question.answer === selectedAnswer && <h2>Richtig!</h2>}
-            {/* <SubmitButton onClick={checkAnswers} /> */}
-          </>
+          <div key={question.id}>
+            <QuestionBubble question={question.question} />
+            {question.options ? (
+              <OptionSelector
+                values={question.options}
+                onSelect={(answer) => setSelectedAnswer(answer)}
+              />
+            ) : (
+              <NumberSelector
+                increment={() => setSelectedAnswer(selectedAnswer + 1)}
+                decrement={() => setSelectedAnswer(selectedAnswer - 1)}
+                number={selectedAnswer}
+              />
+            )}
+            <button onClick={() => setShowAnswer(true)}>Submit</button>
+            {showAnswer && (
+              <>
+                <div>Correct answer: {question.answer}</div>
+                {question.answer === selectedAnswer && <h2>Gut gemacht!</h2>}
+              </>
+            )}
+          </div>
         )}
       </div>
     </Numbermain>
   );
 }
+
 export default NumberQuestionPage;
-NumberQuestionPage.propTypes = {
-  pageNumber: PropTypes.number,
-};
 
 //Styling
 
