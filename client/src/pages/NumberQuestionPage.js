@@ -51,6 +51,8 @@ NumberQuestionPage.propTypes = {
   pageNumber: PropTypes.number,
 };
 
+//Styling
+
 const Numbermain = styled.div`
   align-items: center;
   background: #9e38d5;

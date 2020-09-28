@@ -7,6 +7,7 @@ import QuestionBubble from "./components/QuestionBubble";
 // import styled from "@emotion/styled";
 
 import NumberQuestionPage from "./pages/NumberQuestionPage";
+import TranslationQuestionPage from "./pages/TranslationQuestionPage";
 
 function App() {
   const [questions, setQuestions] = useState(null);
@@ -23,6 +24,9 @@ function App() {
   return (
     <div>
       <NumberQuestionPage pageNumber="1"></NumberQuestionPage>
+      <NumberQuestionPage pageNumber="2"></NumberQuestionPage>
+      <TranslationQuestionPage pageNumber="3"></TranslationQuestionPage>
+      <TranslationQuestionPage pageNumber="4"></TranslationQuestionPage>
       <h1>Mascota</h1>
 
       {questions &&
