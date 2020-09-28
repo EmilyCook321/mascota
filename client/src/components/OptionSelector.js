@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "@emotion/styled";
 
 function OptionSelector({ values, onSelect }) {
   return (
     <div>
       {values.map((value) => (
-        <button onClick={() => onSelect(value)} key={value}>
+        <Button onClick={() => onSelect(value)} key={value}>
           {value}
-        </button>
+        </Button>
       ))}
     </div>
   );
@@ -18,3 +19,10 @@ OptionSelector.propTypes = {
 };
 
 export default OptionSelector;
+
+//Styling
+
+const Button = styled.button`
+  background-color: #9e38d5;
+  border-radius: 5px;
+`;
