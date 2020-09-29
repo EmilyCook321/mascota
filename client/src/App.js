@@ -2,7 +2,6 @@ import React from "react";
 import GlobalStyles from "./GlobalStyles";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NumberQuestionPage from "./pages/NumberQuestionPage";
-import styled from "@emotion/styled";
 
 function App() {
   return (
