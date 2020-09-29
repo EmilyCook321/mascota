@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
 import { ReactComponent as HeartIcon } from "../assets/icons/heart-icon.svg";
+import styled from "@emotion/styled";
 
 export default function Counter(props) {
   return (
-    <div>
-      <HeartIcon />
-
+    <CounterStyle>
+      <Heart>
+        <HeartIcon />
+      </Heart>
       <output>{props.number}</output>
-    </div>
+    </CounterStyle>
   );
 }
 
@@ -17,8 +18,15 @@ Counter.propTypes = {
   number: PropTypes.func,
 };
 
-const div = styled.div`
-  align-content: center;
-  width: 100%;
+const CounterStyle = styled.output`
+  color: #ffffff;
+  justify-content: right;
   height: auto;
+  width: 100%;
+`;
+
+const Heart = styled.svg`
+  color: #ff0000;
+  height: auto;
+  width: 100%;
 `;

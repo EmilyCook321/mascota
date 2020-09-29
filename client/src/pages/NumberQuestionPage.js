@@ -6,6 +6,7 @@ import QuestionBubble from "../components/QuestionBubble";
 import { useParams } from "react-router-dom";
 import OptionSelector from "../components/OptionSelector";
 import Counter from "../components/Counter";
+import styled from "@emotion/styled";
 
 function NumberQuestionPage() {
   const [question, setQuestion] = useState(null);
@@ -28,7 +29,7 @@ function NumberQuestionPage() {
       <h1>Question {id}</h1>
       <questionstyling>
         <Counter number={incPoints} />
-
+        <div></div>
         {question && (
           <div key={question.id}>
             <QuestionBubble question={question.question} />
@@ -71,3 +72,12 @@ function NumberQuestionPage() {
 }
 
 export default NumberQuestionPage;
+
+const questionstyling = styled.div`
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  width: auto;
+  height: 100%;
+  margin: auto;
+`;

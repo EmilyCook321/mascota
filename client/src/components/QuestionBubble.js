@@ -12,14 +12,11 @@ export default function QuestionBubble({ question }) {
 
 QuestionBubble.propTypes = { question: PropTypes.string };
 
-// styling
-
 const Textarea = styled.textarea`
   background-color: #4e7fcd;
   outline: none;
-  resize: none;
   text-align: center;
   font-size: 100%;
-  color: #ffffff;
+  color: #ffff;
   border-radius: 5px;
 `;

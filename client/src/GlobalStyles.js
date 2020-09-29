@@ -36,8 +36,6 @@ const GlobalStyles = () => {
         }
         body {
           background-color: #9e38d5;
-          margin: 0;
-          padding: 0;
         }
 
         h1 {
