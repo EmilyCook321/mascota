@@ -16,10 +16,13 @@ function App() {
           <Route path="/">
             <div>
               <h1>Mascota</h1>
+              <Link to="/howtoplay">How to Play</Link>
+              <Link to="/design">Design Your Mascota</Link>
               <Link to="/questions/1">Questions 1</Link>
               <Link to="/questions/2">Questions 2</Link>
               <Link to="/questions/3">Questions 3</Link>
-              <Link to="/questions/3">Questions 4</Link>
+              <Link to="/questions/4">Questions 4</Link>
+              <Link to="/Progress Overview">Progress Overview</Link>
             </div>
           </Route>
         </Switch>
