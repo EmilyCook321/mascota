@@ -1,55 +1,42 @@
-import React, { useState, useEffect } from "react";
-// import GlobalStyles from "./GlobalStyles";
-import { getQuestions } from "./api/getQuestions";
-import NumberSelector from "./components/NumberSelector";
-import OptionSelector from "./components/OptionSelector";
-import QuestionBubble from "./components/QuestionBubble";
-// import styled from "@emotion/styled";
-
+import React from "react";
+import GlobalStyles from "./GlobalStyles";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NumberQuestionPage from "./pages/NumberQuestionPage";
-import TranslationQuestionPage from "./pages/TranslationQuestionPage";
+import styled from "@emotion/styled";
 
 function App() {
-  const [questions, setQuestions] = useState(null);
-  const [selectedAnswer, setSelectedAnswer] = useState(0);
-
-  useEffect(() => {
-    async function fetchQuestions() {
-      const allQuestions = await getQuestions();
-      setQuestions(allQuestions);
-    }
-    fetchQuestions();
-  }, []);
-
   return (
     <div>
-      <NumberQuestionPage pageNumber="1"></NumberQuestionPage>
-      <NumberQuestionPage pageNumber="2"></NumberQuestionPage>
-      <TranslationQuestionPage pageNumber="3"></TranslationQuestionPage>
-      <TranslationQuestionPage pageNumber="4"></TranslationQuestionPage>
-      <h1>Mascota</h1>
-
-      {questions &&
-        questions.map(({ question, id, answer, options }) => (
-          <>
-            <QuestionBubble question={question} key={id} />
-
-            {options ? (
-              <OptionSelector
-                values={options}
-                onSelect={(answer) => setSelectedAnswer(answer)}
-              />
-            ) : (
-              <NumberSelector
-                increment={() => setSelectedAnswer(selectedAnswer + 1)}
-                decrement={() => setSelectedAnswer(selectedAnswer - 1)}
-                number={selectedAnswer}
-              />
-            )}
-            {answer === selectedAnswer && <h2>Richtig!</h2>}
-          </>
-        ))}
+      <GlobalStyles />
+      <Router>
+        <Switch>
+          <Route path="/questions/:id">
+            <NumberQuestionPage />
+          </Route>
+          <Route path="/">
+            <div>
+              <h1>Mascota</h1>
+              <Link to="/howtoplay">How to Play</Link>
+              <Link to="/design">Design Your Mascota</Link>
+              <Link to="/questions/1">Questions 1</Link>
+              <Link to="/questions/2">Questions 2</Link>
+              <Link to="/questions/3">Questions 3</Link>
+              <Link to="/questions/4">Questions 4</Link>
+              <Link to="/Progress Overview">Progress Overview</Link>
+            </div>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
 export default App;
+
+//Styling
+
+// const div = styled.div`
+//   text-align: center;
+//   font-size: 15px;
+//   font-family: Roboto;
+
+// `;
