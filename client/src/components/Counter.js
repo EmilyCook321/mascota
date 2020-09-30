@@ -9,6 +9,7 @@ export default function Counter(props) {
       <Heart>
         <HeartIcon />
       </Heart>
+
       <output>{props.number}</output>
     </CounterStyle>
   );
@@ -20,13 +21,10 @@ Counter.propTypes = {
 
 const CounterStyle = styled.output`
   color: #ffffff;
-  justify-content: right;
-  height: auto;
-  width: 100%;
+
+  /* position: relative; */
 `;
 
 const Heart = styled.svg`
   color: #ff0000;
-  height: auto;
-  width: 100%;
 `;

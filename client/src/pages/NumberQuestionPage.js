@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import NumberSelector from "../components/NumberSelector";
 import { getQuestion } from "../api/getQuestion";
 import QuestionBubble from "../components/QuestionBubble";
-
 import { useParams } from "react-router-dom";
 import OptionSelector from "../components/OptionSelector";
 import Counter from "../components/Counter";
@@ -23,6 +22,15 @@ function NumberQuestionPage() {
     }
     fetchQuestion();
   }, [id]);
+
+  //insert function for page change
+
+  // function handleClick() {
+  //   setShowAnswer(true);
+  //   if (question.answer === selectedAnswer) {
+  //     setIncPoints(incPoints + 1);
+  //   }
+  // }
 
   return (
     <div>
@@ -59,6 +67,7 @@ function NumberQuestionPage() {
             {/* <output>Points {incPoints}</output> */}
 
             {showAnswer && (
+              // {nextPage && (
               <>
                 {/* <div>Correct answer: {question.answer}</div> */}
                 {question.answer === selectedAnswer && <h2>Gut gemacht!</h2>}
