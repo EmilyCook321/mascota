@@ -3,20 +3,20 @@ import PropTypes from "prop-types";
 import { ReactComponent as HeartIcon } from "../assets/icons/heart-icon.svg";
 import styled from "@emotion/styled";
 
-export default function Counter(props) {
+export default function Counter({ number }) {
   return (
     <CounterStyle>
       <Heart>
         <HeartIcon />
       </Heart>
 
-      <output>{props.number}</output>
+      <output>{number}</output>
     </CounterStyle>
   );
 }
 
 Counter.propTypes = {
-  number: PropTypes.func,
+  number: PropTypes.number,
 };
 
 const CounterStyle = styled.output`
