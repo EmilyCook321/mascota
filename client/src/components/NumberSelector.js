@@ -22,6 +22,7 @@ NumberSelector.propTypes = {
 const NumberButton = styled.button`
   background-color: #ffffff;
   border-radius: 5px;
-  height: 40px;
-  width: 40px;
+  height: 100%;
+  width: auto;
+  justify-items: center;
 `;

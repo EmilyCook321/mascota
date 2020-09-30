@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import NumberSelector from "../components/NumberSelector";
 import { getQuestion } from "../api/getQuestion";
 import QuestionBubble from "../components/QuestionBubble";
-import styled from "@emotion/styled";
 import { useParams } from "react-router-dom";
 import OptionSelector from "../components/OptionSelector";
-
-// import SubmitButton from "../components/SubmitButton";
+import Counter from "../components/Counter";
+import styled from "@emotion/styled";
 
 function NumberQuestionPage() {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(0);
   const { id } = useParams();
   const [showAnswer, setShowAnswer] = useState(false);
+  const [incPoints, setIncPoints] = useState(0);
 
   useEffect(() => {
     async function fetchQuestion() {
@@ -23,11 +23,21 @@ function NumberQuestionPage() {
     fetchQuestion();
   }, [id]);
 
-  return (
-    <Numbermain>
-      <div>
-        <h1>Question {id}</h1>
+  //insert function for page change
 
+  // function handleClick() {
+  //   setShowAnswer(true);
+  //   if (question.answer === selectedAnswer) {
+  //     setIncPoints(incPoints + 1);
+  //   }
+  // }
+
+  return (
+    <div>
+      <h1>Question {id}</h1>
+      <questionstyling>
+        <Counter number={incPoints} />
+        <div></div>
         {question && (
           <div key={question.id}>
             <QuestionBubble question={question.question} />
@@ -43,25 +53,40 @@ function NumberQuestionPage() {
                 number={selectedAnswer}
               />
             )}
-            <button onClick={() => setShowAnswer(true)}>Submit</button>
+            <button
+              onClick={() => {
+                setShowAnswer(true);
+                if (question.answer === selectedAnswer) {
+                  setIncPoints(incPoints + 1);
+                }
+              }}
+            >
+              Submit
+            </button>
+
+            {/* <output>Points {incPoints}</output> */}
+
             {showAnswer && (
+              // {nextPage && (
               <>
-                <div>Correct answer: {question.answer}</div>
+                {/* <div>Correct answer: {question.answer}</div> */}
                 {question.answer === selectedAnswer && <h2>Gut gemacht!</h2>}
               </>
             )}
           </div>
         )}
-      </div>
-    </Numbermain>
+      </questionstyling>
+    </div>
   );
 }
 
 export default NumberQuestionPage;
 
-//Styling
-
-const Numbermain = styled.div`
+const questionstyling = styled.div`
+  display: flex;
   align-items: center;
-  background: #9e38d5;
+  flex-flow: column;
+  width: auto;
+  height: 100%;
+  margin: auto;
 `;

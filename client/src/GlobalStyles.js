@@ -36,31 +36,34 @@ const GlobalStyles = () => {
         }
         body {
           background-color: #9e38d5;
-          margin: 0;
-          padding: 0;
         }
 
         h1 {
           font-family: "Montserrat";
-          font-size: 30px;
+
           color: var (--font-color-white);
         }
 
         h2 {
           font-family: "Montserrat";
-          font-size: 20px;
+
           color: var(--font-color-white);
         }
 
         p {
           color: var(--font-color-orange);
-          font-size: 15px;
         }
 
         button {
           font-family: "Montserrat";
-          font-size: 16px;
+
           background-color: #4e7fcd;
+        }
+
+        textarea {
+          font-family: "Montserrat";
+          width: 100%;
+          height: auto;
         }
       `}
     />
