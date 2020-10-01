@@ -4,11 +4,11 @@ import styled from "@emotion/styled";
 
 export default function NumberSelector(props) {
   return (
-    <div>
+    <Container>
       <NumberButton onClick={props.increment}>+</NumberButton>
       <span>{props.number}</span>
       <NumberButton onClick={props.decrement}>-</NumberButton>
-    </div>
+    </Container>
   );
 }
 
@@ -19,10 +19,15 @@ NumberSelector.propTypes = {
 };
 
 // styling
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+`;
+
 const NumberButton = styled.button`
   background-color: #ffffff;
   border-radius: 5px;
-  height: 100%;
-  width: auto;
-  justify-items: center;
+  width: 30px;
+  height: 30px;
 `;

@@ -40,37 +40,42 @@ function NumberQuestionPage() {
   return (
     <div>
       <Header />
-      <h1>Question {id}</h1>
-      <questionstyling>
-        <Counter number={incPoints} />
-        <div></div>
-        {question && (
-          <div key={question.id}>
-            <QuestionBubble question={question.question} />
-            {question.options ? (
-              <OptionSelector
-                values={question.options}
-                onSelect={(answer) => setSelectedAnswer(answer)}
-              />
-            ) : (
-              <NumberSelector
-                increment={() => setSelectedAnswer(selectedAnswer + 1)}
-                decrement={() => setSelectedAnswer(selectedAnswer - 1)}
-                number={selectedAnswer}
-              />
-            )}
-            <SubmitButton onClick={handleClick} />
+      <Main>
+        <questionstyling>
+          <QuestionNumber>
+            <h1>Question {id}</h1>
+          </QuestionNumber>
 
-            {showAnswer && (
-              // {nextPage && (
-              <>
-                {/* <div>Correct answer: {question.answer}</div> */}
-                {question.answer === selectedAnswer && <h2>Gut gemacht!</h2>}
-              </>
-            )}
-          </div>
-        )}
-      </questionstyling>
+          <Counter number={incPoints} />
+
+          {question && (
+            <QuestionContainer key={question.id}>
+              <QuestionBubble question={question.question} />
+              {question.options ? (
+                <OptionSelector
+                  values={question.options}
+                  onSelect={(answer) => setSelectedAnswer(answer)}
+                />
+              ) : (
+                <NumberSelector
+                  increment={() => setSelectedAnswer(selectedAnswer + 1)}
+                  decrement={() => setSelectedAnswer(selectedAnswer - 1)}
+                  number={selectedAnswer}
+                />
+              )}
+              <SubmitButton onClick={handleClick} />
+
+              {showAnswer && (
+                // {nextPage && (
+                <>
+                  {/* <div>Correct answer: {question.answer}</div> */}
+                  {question.answer === selectedAnswer && <h2>Gut gemacht!</h2>}
+                </>
+              )}
+            </QuestionContainer>
+          )}
+        </questionstyling>
+      </Main>
     </div>
   );
 }
@@ -80,8 +85,29 @@ export default NumberQuestionPage;
 const questionstyling = styled.div`
   display: flex;
   align-items: center;
-  flex-flow: column;
+  justify-content: center;
+  flex-direction: column;
   width: auto;
   height: 100%;
   margin: auto;
+`;
+
+const QuestionNumber = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 20%;
+`;
+const Main = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  /* width: auto;
+  height: 100%; */
+`;
+
+const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
