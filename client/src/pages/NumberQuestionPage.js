@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import NumberSelector from "../components/NumberSelector";
 import { getQuestion } from "../api/getQuestion";
 import QuestionBubble from "../components/QuestionBubble";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import OptionSelector from "../components/OptionSelector";
 import Counter from "../components/Counter";
+import Header from "../components/Header";
 import styled from "@emotion/styled";
+import SubmitButton from "../components/SubmitButton";
 
 function NumberQuestionPage() {
+  const history = useHistory();
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(0);
   const { id } = useParams();
@@ -23,17 +26,20 @@ function NumberQuestionPage() {
     fetchQuestion();
   }, [id]);
 
-  //insert function for page change
+  // insert function for page change
 
-  // function handleClick() {
-  //   setShowAnswer(true);
-  //   if (question.answer === selectedAnswer) {
-  //     setIncPoints(incPoints + 1);
-  //   }
-  // }
+  function handleClick() {
+    console.log("handleClick");
+    setShowAnswer(true);
+    if (question.answer === selectedAnswer) {
+      setIncPoints(incPoints + 1);
+      history.push(`/questions/${Number(id) + 1}`);
+    }
+  }
 
   return (
     <div>
+      <Header />
       <h1>Question {id}</h1>
       <questionstyling>
         <Counter number={incPoints} />
@@ -53,18 +59,7 @@ function NumberQuestionPage() {
                 number={selectedAnswer}
               />
             )}
-            <button
-              onClick={() => {
-                setShowAnswer(true);
-                if (question.answer === selectedAnswer) {
-                  setIncPoints(incPoints + 1);
-                }
-              }}
-            >
-              Submit
-            </button>
-
-            {/* <output>Points {incPoints}</output> */}
+            <SubmitButton onClick={handleClick} />
 
             {showAnswer && (
               // {nextPage && (
