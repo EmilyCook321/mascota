@@ -5,18 +5,20 @@ import Header from "../components/Header";
 import styled from "@emotion/styled";
 import CongratsBubble from "../components/CongratsBubble";
 import ContinueButton from "../components/ContinueButton";
+import ChickIcon from "../assets/icons/chick.svg";
 
 function CongratulationsPage() {
   const history = useHistory();
 
   function handleClick() {
-    history.push(`/questions/{Number(id)`);
+    history.push(`/questions/{Number(id) `);
   }
 
   return (
     <div>
       <Header />
       <Main>
+        <img src={ChickIcon} alt="Hatching Chick Icon" />
         <Counter />
         <CongratsBubble />
         <ContinueButton onClick={handleClick} />

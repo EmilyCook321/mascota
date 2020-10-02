@@ -2,14 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-export default function CongratsBubble({ incPoints }) {
+export default function CongratsBubble() {
   return (
     <>
       <h1>Herzlichen Glückwunsch!</h1>
       <Textarea>
-        Du hast {incPoints} Herzchen gewonnen! Du bist jetzt mit der Kita fertig
-        und als Du jetzt 6 Jahre Alt bist, gehst Du jetzt zur Grundschule! Bist
-        Du bereit weiter zu lernen?
+        Du bist jetzt mit der Kita fertig und als Du jetzt 6 Jahre Alt bist,
+        gehst Du jetzt zur Grundschule! Bist Du bereit weiter zu lernen?
       </Textarea>
     </>
   );
@@ -17,7 +16,7 @@ export default function CongratsBubble({ incPoints }) {
 
 CongratsBubble.propTypes = { incPoints: PropTypes.string };
 
-const Textarea = styled.textarea`
+const Textarea = styled.p`
   top: 20px;
   background-color: #4e7fcd;
   outline: none;

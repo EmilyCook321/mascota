@@ -13,16 +13,17 @@ function App() {
           <Route path="/questions/:id">
             <NumberQuestionPage />
           </Route>
-          <Route path="/">
+
+          <Route exact path="/">
             <div>
               <h1>Mascota</h1>
-
               <Link to="/questions/1">Questions 1</Link>
               <Link to="/questions/2">Questions 2</Link>
               <Link to="/questions/3">Questions 3</Link>
               <Link to="/questions/4">Questions 4</Link>
             </div>
           </Route>
+
           <Route path="/congratulations/">
             <CongratulationsPage />
           </Route>
