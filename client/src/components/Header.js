@@ -10,6 +10,7 @@ const Header = () => {
       <MenuButton>
         <img src={MenuIcon} alt="Menu icon" />
       </MenuButton>
+      <Title>Mascota</Title>
       <Chicken>
         <img src={ChickenIcon} alt="Chick icon" />
       </Chicken>
@@ -22,6 +23,11 @@ export default Header;
 const Container = styled.div`
   display: flex;
   align-items: center;
+  text-align: center;
+`;
+
+const Title = styled.div`
+  margin: auto;
 `;
 
 const Chicken = styled.div`

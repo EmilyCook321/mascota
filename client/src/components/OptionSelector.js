@@ -23,6 +23,9 @@ export default OptionSelector;
 //Styling
 
 const Button = styled.button`
-  background-color: #9e38d5;
+  color: #ffffff;
+  background-color: #d4561b;
   border-radius: 5px;
+  width: 20%;
+  height: 20%;
 `;

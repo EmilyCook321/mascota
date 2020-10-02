@@ -8,6 +8,7 @@ import Counter from "../components/Counter";
 import Header from "../components/Header";
 import styled from "@emotion/styled";
 import SubmitButton from "../components/SubmitButton";
+import HatchingChick from "../assets/icons/hatchingchick.svg";
 
 function NumberQuestionPage() {
   const history = useHistory();
@@ -34,6 +35,9 @@ function NumberQuestionPage() {
     if (question.answer === selectedAnswer) {
       setIncPoints(incPoints + 1);
       history.push(`/questions/${Number(id) + 1}`);
+      if (incPoints === 4) {
+        history.push(`/congratulations/`);
+      }
     }
   }
 
@@ -50,6 +54,8 @@ function NumberQuestionPage() {
 
           {question && (
             <QuestionContainer key={question.id}>
+              <img src={HatchingChick} alt="Hatching Chick Icon" />
+
               <QuestionBubble question={question.question} />
               {question.options ? (
                 <OptionSelector
@@ -111,3 +117,11 @@ const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+// const Chicken = styled.div`
+// display: flex;
+// justify-content: center;
+// align-items: center;
+//   width: 50px;
+//   height: 50px;
+// `;
