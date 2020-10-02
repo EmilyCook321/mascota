@@ -27,16 +27,18 @@ function NumberQuestionPage() {
     fetchQuestion();
   }, [id]);
 
-  // insert function for page change
+  if (incPoints === 4) {
+    setTimeout(() => {
+      history.push(`/congratulations/`);
+    }, 1000);
+  }
 
   function handleClick() {
     setShowAnswer(true);
     if (question.answer === selectedAnswer) {
       setIncPoints(incPoints + 1);
       history.push(`/questions/${Number(id) + 1}`);
-      if (incPoints === 4) {
-        history.push(`/congratulations/`);
-      }
+      setSelectedAnswer(0);
     }
   }
 

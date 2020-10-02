@@ -3,13 +3,14 @@ import MenuIcon from "../assets/icons/menu-icon.svg";
 import ChickenIcon from "../assets/icons/chicken.svg";
 
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <Container>
-      <MenuButton>
+      <HomeLink to="/">
         <img src={MenuIcon} alt="Menu icon" />
-      </MenuButton>
+      </HomeLink>
       <Title>Mascota</Title>
       <Chicken>
         <img src={ChickenIcon} alt="Chick icon" />
@@ -35,7 +36,7 @@ const Chicken = styled.div`
   height: 50px;
 `;
 
-const MenuButton = styled.div`
+const HomeLink = styled(Link)`
   margin-right: auto;
   width: 40px;
   height: 40px;
