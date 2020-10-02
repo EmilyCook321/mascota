@@ -2,16 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-function SubmitButton({ onClick }) {
-  return <Button onClick={onClick}>Submit</Button>;
+function SubmitButton({ text, onClick }) {
+  return <Button onClick={onClick}>{text}</Button>;
 }
 
 export default SubmitButton;
 
 SubmitButton.propTypes = {
-  submitanswer: PropTypes.func,
-  changepage: PropTypes.func,
   onClick: PropTypes.func,
+  text: PropTypes.string,
 };
 
 const Button = styled.button`

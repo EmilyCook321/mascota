@@ -30,7 +30,6 @@ function NumberQuestionPage() {
   // insert function for page change
 
   function handleClick() {
-    console.log("handleClick");
     setShowAnswer(true);
     if (question.answer === selectedAnswer) {
       setIncPoints(incPoints + 1);
@@ -69,7 +68,10 @@ function NumberQuestionPage() {
                   number={selectedAnswer}
                 />
               )}
-              <SubmitButton onClick={handleClick} />
+              <SubmitButton
+                onClick={handleClick}
+                text="Bestätigen"
+              ></SubmitButton>
 
               {showAnswer && (
                 // {nextPage && (
