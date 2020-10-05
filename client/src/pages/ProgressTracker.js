@@ -4,6 +4,8 @@ import SubmitButton from "../components/SubmitButton";
 import Header from "../components/Header";
 import styled from "@emotion/styled";
 import Counter from "../components/Counter";
+import NewWorldBubble from "../components/NewWordBubble";
+import NewWordBubbleOverview from "../components/NewWordBubbleOverview";
 
 function ProgressTracker() {
   const history = useHistory();
@@ -18,8 +20,10 @@ function ProgressTracker() {
         <h1>Progress Tracker</h1>
         <Counter />
         <h2>New Words Learnt: (no)</h2>
-        <p>New Words Learnt (Overview)</p>
-        <p>Set Your Word Goal </p>
+        <NewWorldBubble />
+        <h3>New Words Learnt (Overview)</h3>
+        <NewWordBubbleOverview />
+        <p>Set Your Word Goal/Revise </p>
         <SubmitButton onClick={handleClick} text="Lerne weiter!"></SubmitButton>
       </Main>
     </div>
