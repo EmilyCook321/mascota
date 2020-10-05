@@ -76,9 +76,7 @@ function NumberQuestionPage() {
               ></SubmitButton>
 
               {showAnswer && (
-                // {nextPage && (
                 <>
-                  {/* <div>Correct answer: {question.answer}</div> */}
                   {question.answer === selectedAnswer && <h2>Gut gemacht!</h2>}
                 </>
               )}
@@ -113,19 +111,9 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  /* width: auto;
-  height: 100%; */
 `;
 
 const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-// const Chicken = styled.div`
-// display: flex;
-// justify-content: center;
-// align-items: center;
-//   width: 50px;
-//   height: 50px;
-// `;
