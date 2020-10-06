@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import styled from "@emotion/styled";
 import SubmitButton from "../components/SubmitButton";
 import HatchingChick from "../assets/icons/hatchingchick.svg";
+import Footer from "../components/Footer";
 
 function NumberQuestionPage() {
   const history = useHistory();
@@ -84,6 +85,7 @@ function NumberQuestionPage() {
           )}
         </questionstyling>
       </Main>
+      <Footer />
     </div>
   );
 }

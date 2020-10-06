@@ -11,6 +11,7 @@ export default SelectGerman;
 SelectGerman.propTypes = {
   onClick: PropTypes.func,
   text: PropTypes.string,
+  color: PropTypes.array,
 };
 
 const Button = styled.button`

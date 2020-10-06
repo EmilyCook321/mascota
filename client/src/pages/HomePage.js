@@ -6,6 +6,8 @@ import Header from "../components/Header";
 import GermanButton from "../components/GermanButton";
 import SpanishButton from "../components/SpanishButton";
 import HowToPlayBubble from "../components/HowToPlayBubble";
+import HumanButton from "../components/HumanButton";
+import ChickenButton from "../components/ChickenButton";
 
 function HomePage() {
   const history = useHistory();
@@ -34,7 +36,8 @@ function HomePage() {
         <GermanButton />
 
         <p>Which Mascota would you like to have?</p>
-
+        <HumanButton />
+        <ChickenButton />
         <SubmitButton onClick={handleClick} text="Los geht's!"></SubmitButton>
       </Main>
     </div>
