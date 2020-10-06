@@ -2,20 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-function SubmitButton({ text, onClick }) {
-  return <Button onClick={onClick}>{text}</Button>;
+function SelectGerman({ onClick }) {
+  return <Button onClick={onClick}>German</Button>;
 }
 
-export default SubmitButton;
+export default SelectGerman;
 
-SubmitButton.propTypes = {
+SelectGerman.propTypes = {
   onClick: PropTypes.func,
   text: PropTypes.string,
+  color: PropTypes.array,
 };
 
 const Button = styled.button`
-  margin: 0 auto;
   justify-content: center;
   color: #ffffff;
-  border-radius: 5px;
 `;

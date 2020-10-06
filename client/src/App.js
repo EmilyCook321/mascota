@@ -19,7 +19,6 @@ function App() {
           <Route exact path="/">
             <div>
               <HomePage />
-              <h1>Mascota</h1>
             </div>
           </Route>
 

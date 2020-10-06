@@ -51,7 +51,7 @@ const GlobalStyles = () => {
         }
 
         p {
-          color: var(--font-color-orange);
+          color: var(--font-color-white);
         }
 
         button {
