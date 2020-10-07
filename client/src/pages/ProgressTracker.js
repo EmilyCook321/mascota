@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import styled from "@emotion/styled";
 import Counter from "../components/Counter";
 import NewWorldBubble from "../components/NewWordBubble";
-import NewWordBubbleOverview from "../components/NewWordBubbleOverview";
 
 function ProgressTracker() {
   const history = useHistory();
@@ -19,12 +18,15 @@ function ProgressTracker() {
       <Main>
         <h1>Progress Tracker</h1>
         <Counter />
-        <h2>New Words Learnt: (no)</h2>
+        <h2>New Words Learnt:</h2>
         <NewWorldBubble />
-        <h3>New Words Learnt (Overview)</h3>
-        <NewWordBubbleOverview />
-        <p>Set Your Word Goal/Revise </p>
-        <SubmitButton onClick={handleClick} text="Lerne weiter!"></SubmitButton>
+        <h3>Set Your Word Goal/Revise </h3>
+        <ButtonStyle>
+          <SubmitButton
+            onClick={handleClick}
+            text="Lerne weiter!"
+          ></SubmitButton>
+        </ButtonStyle>
       </Main>
     </div>
   );
@@ -37,4 +39,9 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
   flex-flow: column;
+`;
+
+const ButtonStyle = styled.div`
+  margin-top: 5%;
+  margin-bottom: 5%;
 `;

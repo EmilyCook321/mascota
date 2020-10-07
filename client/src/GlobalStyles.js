@@ -52,6 +52,12 @@ const GlobalStyles = () => {
           color: var(--font-color-white);
         }
 
+        h3 {
+          font-family: "Montserrat";
+
+          color: var(--font-color-white);
+        }
+
         p {
           color: var(--font-color-white);
         }
