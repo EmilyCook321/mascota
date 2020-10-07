@@ -50,14 +50,17 @@ function NumberQuestionPage() {
           <QuestionNumber>
             <h1>Question {id}</h1>
           </QuestionNumber>
-
-          <Counter number={incPoints} />
+          <CounterStyling>
+            <Counter number={incPoints} />
+          </CounterStyling>
+          <ChickStyling>
+            <img src={HatchingChick} alt="Hatching Chick Icon" />
+          </ChickStyling>
 
           {question && (
             <QuestionContainer key={question.id}>
-              <img src={HatchingChick} alt="Hatching Chick Icon" />
-
               <QuestionBubble question={question.question} />
+
               {question.options ? (
                 <OptionSelector
                   values={question.options}
@@ -70,16 +73,13 @@ function NumberQuestionPage() {
                   number={selectedAnswer}
                 />
               )}
+
               <SubmitButton
                 onClick={handleClick}
                 text="Bestätigen"
               ></SubmitButton>
 
-              {showAnswer && (
-                <>
-                  {question.answer === selectedAnswer && <h2>Gut gemacht!</h2>}
-                </>
-              )}
+              {showAnswer && <>{question.answer === selectedAnswer}</>}
             </QuestionContainer>
           )}
         </questionstyling>
@@ -90,30 +90,31 @@ function NumberQuestionPage() {
 
 export default NumberQuestionPage;
 
-const questionstyling = styled.div`
-  display: flex;
-  align-items: center;
+const Main = styled.main`
+  /* display: flex;
   justify-content: center;
-  flex-direction: column;
-  width: auto;
-  height: 100%;
-  margin: auto;
+  align-items: center; */
 `;
 
 const QuestionNumber = styled.div`
   display: flex;
-  align-items: center;
-  text-align: center;
-  padding-left: 20%;
+  justify-content: center;
 `;
-const Main = styled.main`
+
+const CounterStyling = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10%;
+  margin-top: 10%;
+`;
+
+const ChickStyling = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-flow: column;
 `;
 
 const QuestionContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
 `;

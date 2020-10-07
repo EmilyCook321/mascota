@@ -10,7 +10,6 @@ export default function Counter({ number }) {
         <Heart>
           <HeartIcon />
         </Heart>
-
         <output>{number}</output>
       </CounterStyle>
     </Main>

@@ -2,10 +2,10 @@
   "questions": [
     {
       "id": 1,
-      "question": "Dino will Felix, Daisy und Alice zu seine Geburtstagsparty einladen. Wie viele Einladungen sollte er schreiben?",
+      "question": "Dino will Felix, Daisy und Alice zu seine Geburtstagsparty einladen🎉 Wie viele Einladungen sollte er schreiben?",
       "answer": 3
     },
-    { "id": 2, "question": "Felix und Daisy bringen ein Geschenk für Dino. Alice bringt zwei Geschenke für ihn. How presents does Dino receive from his friends?", "answer": 4 },
+    { "id": 2, "question": "Felix und Daisy bringen ein Geschenk für Dino. Alice bringt zwei Geschenke für ihn 🎁 Wie viele Geschenke bekommt Dino?", "answer": 4 },
     { "id": 3, "question": "Dino findet Kuchen super. What does Dino think is super?", "answer": "cake", "options": ["cooking", "chicks", "cake", "cats"] },
     {
       "id": 4,
