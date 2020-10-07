@@ -6,12 +6,12 @@
       "answer": 3
     },
     { "id": 2, "question": "Felix und Daisy bringen ein Geschenk für Dino. Alice bringt zwei Geschenke für ihn 🎁 Wie viele Geschenke bekommt Dino?", "answer": 4 },
-    { "id": 3, "question": "Dino findet Kuchen super. What does Dino think is super?", "answer": "cake", "options": ["cooking", "chicks", "cake", "cats"] },
+    { "id": 3, "question": "Dino findet Kuchen super. Was findet Dino super?", "answer": "cake", "options": ["cooking", "chicks", "cake", "cats"] },
     {
       "id": 4,
       "question": "Dino hat sehr viele schöne Geschenke bekommen- er freut sich sehr! Select the best word to describe happiness?",
-      "answer": "glücklich",
-      "options": ["glücklich", "traurig", "verwirrt", "hoffnungsvoll"]
+      "answer": "glücklich 😀",
+      "options": ["glücklich 😀", "traurig 😢", "verwirrt 🧐", "müde😴"]
     }
   ]
 }

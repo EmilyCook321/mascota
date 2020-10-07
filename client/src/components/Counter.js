@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as HeartIcon } from "../assets/icons/heart-icon.svg";
+import { ReactComponent as HeartIcon } from "../assets/icons/red-heart.svg";
 import styled from "@emotion/styled";
 
 export default function Counter({ number }) {
@@ -10,7 +10,9 @@ export default function Counter({ number }) {
         <Heart>
           <HeartIcon />
         </Heart>
-        <output>{number}</output>
+        <Number>
+          <output>{number}</output>
+        </Number>
       </CounterStyle>
     </Main>
   );
@@ -25,9 +27,14 @@ const Main = styled.div`
   justify-content: flex-end;
 `;
 
+const Number = styled.output`
+  margin-top: 7%;
+`;
 const CounterStyle = styled.output`
+  display: flex;
+  align-items: center;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 30px;
 `;
 
 const Heart = styled.svg`

@@ -37,6 +37,7 @@ const Number = styled.div`
   margin-left: 10%;
   margin-right: 10%;
 `;
+
 const NumberButton = styled.button`
   background-color: #ffffff;
   border-radius: 5px;
