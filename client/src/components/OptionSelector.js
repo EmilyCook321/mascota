@@ -4,13 +4,13 @@ import styled from "@emotion/styled";
 
 function OptionSelector({ values, onSelect }) {
   return (
-    <div>
+    <Container>
       {values.map((value) => (
         <Button onClick={() => onSelect(value)} key={value}>
           {value}
         </Button>
       ))}
-    </div>
+    </Container>
   );
 }
 OptionSelector.propTypes = {
@@ -22,10 +22,23 @@ export default OptionSelector;
 
 //Styling
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5%;
+`;
+
 const Button = styled.button`
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: 3%;
+  margin-left: 3%;
   color: #ffffff;
   background-color: #d4561b;
   border-radius: 5px;
-  width: 20%;
-  height: 20%;
+  border: none;
+  width: 70px;
+  height: 40px;
 `;
