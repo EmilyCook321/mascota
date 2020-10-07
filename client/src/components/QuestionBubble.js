@@ -14,7 +14,7 @@ QuestionBubble.propTypes = { question: PropTypes.string };
 
 const Textarea = styled.textarea`
   top: 20px;
-  background-color: #4e7fcd;
+  background-color: #6c63ff;
   outline: none;
   resize: none;
   text-align: center;
