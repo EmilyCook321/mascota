@@ -5,10 +5,9 @@ import styled from "@emotion/styled";
 export default function CongratsBubble() {
   return (
     <>
-      <h1>Herzlichen Glückwunsch!</h1>
+      <h2>Herzlichen Glückwunsch!</h2>
       <Textarea>
-        Du bist jetzt mit der Kita fertig und als Du jetzt 6 Jahre Alt bist,
-        gehst Du jetzt zur Grundschule! Bist Du bereit weiter zu lernen?
+        Dino kann jetzt stehen! Lerne weiter, damit er fliegen kann.
       </Textarea>
     </>
   );
@@ -16,15 +15,20 @@ export default function CongratsBubble() {
 
 CongratsBubble.propTypes = { incPoints: PropTypes.string };
 
-const Textarea = styled.p`
-  top: 20px;
-  background-color: #4e7fcd;
+const Textarea = styled.textarea`
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2%;
+  padding-top: 8%;
+  background-color: #6c63ff;
   outline: none;
+  border: none;
   resize: none;
   text-align: center;
   font-size: 100%;
   color: #ffff;
-  border-radius: 3px;
-  width: 400px;
+  border-radius: 5px;
+  width: 250px;
   height: 100px;
 `;
