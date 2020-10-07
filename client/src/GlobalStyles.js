@@ -20,6 +20,8 @@ const GlobalStyles = () => {
           --answer-bubble-blue: #4e7fcd;
           --correct-answer-green: #33ffbb;
           --base-bg-purple: #9e38d5;
+          --button-blue: #6c63ff;
+          --button-orange: #d4561b;
           --submit-btn-color: #4e7fcd;
           --answer-bubble-color: #4e7fcd;
           --heart-counter-color: #ff33b2;
@@ -35,13 +37,13 @@ const GlobalStyles = () => {
           width: 100vw;
         }
         body {
-          background-color: #9e38d5;
+          background-color: var(--base-bg-purple);
         }
 
         h1 {
           font-family: "Montserrat";
 
-          color: var (--font-color-white);
+          color: var(--font-color-white);
         }
 
         h2 {
@@ -56,8 +58,7 @@ const GlobalStyles = () => {
 
         button {
           font-family: "Montserrat";
-
-          background-color: #4e7fcd;
+          background-color: var(--button-blue);
         }
 
         textarea {

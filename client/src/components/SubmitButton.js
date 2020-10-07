@@ -16,6 +16,11 @@ SubmitButton.propTypes = {
 const Button = styled.button`
   margin: 0 auto;
   justify-content: center;
+  font-size: 15px;
   color: #ffffff;
-  border-radius: 5px;
+  border-radius: 10px;
+  width: 120px;
+  height: 50px;
+  background-color: #d4561b;
+  border: none;
 `;

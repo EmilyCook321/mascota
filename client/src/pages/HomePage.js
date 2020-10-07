@@ -5,7 +5,6 @@ import styled from "@emotion/styled";
 import Header from "../components/Header";
 import GermanButton from "../components/GermanButton";
 import SpanishButton from "../components/SpanishButton";
-import HowToPlayBubble from "../components/HowToPlayBubble";
 import HumanButton from "../components/HumanButton";
 import ChickenButton from "../components/ChickenButton";
 
@@ -20,25 +19,29 @@ function HomePage() {
     <div>
       <Header />
       <Main>
-        <h1>How to Play</h1>
+        <Start>
+          <h1>Get Started!</h1>
+        </Start>
+        <LanguageSelect>
+          <p> Which language would you like to learn?</p>
+        </LanguageSelect>
+        <LanguageButtons>
+          <SpanishButton />
+          <Divider></Divider>
+          <GermanButton />
+        </LanguageButtons>
 
-        <Bubblestyling>
-          <HowToPlayBubble />
-        </Bubblestyling>
-        <h2>Get Started</h2>
-        <p>
-          {" "}
-          Which language would you like to learn? Select either German or
-          Spanish
-        </p>
-
-        <SpanishButton />
-        <GermanButton />
-
-        <p>Which Mascota would you like to have?</p>
-        <HumanButton />
-        <ChickenButton />
-        <SubmitButton onClick={handleClick} text="Los geht's!"></SubmitButton>
+        <MascotaSelect>
+          <p>Select your Mascota</p>
+        </MascotaSelect>
+        <MascotaContainer>
+          <ChickenButton />
+          <Divider></Divider>
+          <HumanButton />
+        </MascotaContainer>
+        <StartButton>
+          <SubmitButton onClick={handleClick} text="Los geht's!"></SubmitButton>
+        </StartButton>
       </Main>
     </div>
   );
@@ -53,12 +56,40 @@ const Main = styled.main`
   flex-flow: column;
 `;
 
-const Bubblestyling = styled.div`
+const Start = styled.div`
+  margin-top: 5%;
+`;
+
+const MascotaSelect = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  width: auto;
-  height: 100%;
-  margin: auto;
+  font-size: 20px;
+  padding: 10%;
+`;
+
+const MascotaContainer = styled.div`
+  display: flex;
+`;
+
+const LanguageSelect = styled.div`
+  font-size: 20px;
+  padding: 10%;
+`;
+
+const LanguageButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5%;
+`;
+
+const Divider = styled.div`
+  margin: 10px;
+`;
+
+const StartButton = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
 `;
