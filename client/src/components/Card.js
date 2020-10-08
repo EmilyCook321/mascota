@@ -4,36 +4,36 @@ import styled from "@emotion/styled";
 
 const Container = styled.div`
   position: relative;
-  height: 300px;
-  width: 300px;
+  height: 55px;
+  width: 55px;
+  margin: 10px;
 `;
 
 const Front = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  background-color: #ffc0cb;
+  background-color: #ffa500;
   color: #ffffff;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Back = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  background-color: #0000ff;
+  background-color: #6c63ff;
   color: #ffffff;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 function Card({ front, back }) {
   const [flipped, setFlipped] = useState(false);
   return (
     <Container onClick={() => setFlipped(!flipped)}>
-      {flipped && <Front>{front}</Front>}
-      {!flipped && <Back>{back}</Back>}
+      {flipped ? <Front>{front}</Front> : <Back>{back}</Back>}
     </Container>
   );
 }
