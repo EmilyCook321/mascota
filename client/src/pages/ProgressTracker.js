@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import styled from "@emotion/styled";
 import Counter from "../components/Counter";
 import NewWorldBubble from "../components/NewWordBubble";
+import Card from "../components/Card";
 
 function ProgressTracker() {
   const history = useHistory();
@@ -21,6 +22,12 @@ function ProgressTracker() {
         <h2>New Words Learnt:</h2>
         <NewWorldBubble />
         <h3>Set Your Word Goal/Revise </h3>
+        <Card front="Kuchen" back="cake">
+          {" "}
+        </Card>
+        <Card front="Laufen" back="running">
+          {" "}
+        </Card>
         <ButtonStyle>
           <SubmitButton
             onClick={handleClick}
