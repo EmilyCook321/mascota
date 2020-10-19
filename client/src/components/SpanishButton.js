@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-function SelectSpanish({ onClick }) {
-  return <Button onClick={onClick}>Spanish</Button>;
+function SelectSpanish() {
+  const [checked, setChecked] = useState(false);
+  function handleChange() {
+    setChecked(!checked);
+  }
+  return (
+    <Button value={checked} onClick={() => handleChange()}>
+      Spanish
+    </Button>
+  );
 }
 
 export default SelectSpanish;
@@ -17,7 +25,7 @@ const Button = styled.button`
   justify-content: center;
   color: #ffffff;
   font-size: 20px;
-  background-color: #6c63ff;
+  background-color: ${({ value }) => (value ? "orange" : "--button-blue")};
   border: none;
   border-radius: 10px;
   width: 120px;
